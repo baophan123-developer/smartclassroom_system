@@ -4,7 +4,6 @@ DHT dht(DHTPIN, DHTTYPE);
 
 void initSensors() {
     dht.begin();
-
     pinMode(PIR_PIN, INPUT);
     pinMode(LDR_PIN, INPUT);
 }
@@ -18,7 +17,6 @@ float readHumidity() {
 }
 
 int readAirQuality() {
-    // Đọc giá trị analog từ MQ135 (0 - 1023)
     return analogRead(MQ135_PIN);
 }
 
@@ -27,6 +25,5 @@ bool isMotionDetected() {
 }
 
 bool isDark() {
-    // Giả sử module LDR trả HIGH khi trời tối
     return digitalRead(LDR_PIN) == HIGH;
 }
